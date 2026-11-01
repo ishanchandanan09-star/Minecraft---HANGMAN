@@ -1,8 +1,3 @@
-"""
-Tests for Minecraft Hangman project.py
-Run with: pytest test_project.py
-"""
-
 import pytest
 
 from project import (
