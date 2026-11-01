@@ -1,11 +1,10 @@
 # Minecraft Hangman – CS50P Final Project
-
-A terminal-based Hangman game themed entirely around **Minecraft**.  
+#### Video Demo: https://youtu.be/plEsxFk_b-4
+#### Description:
+A terminal-based Hangman game themed entirely around **Minecraft**.
 Guess letters to reveal Minecraft items, blocks, mobs and features before the hangman is fully drawn.
 
 The project includes three difficulty levels based on word length, persistent player statistics, colored terminal output, and a clean menu system.
-
-**Video Demo:** *(add your 3-minute YouTube / Loom link here after recording)*
 
 ---
 
