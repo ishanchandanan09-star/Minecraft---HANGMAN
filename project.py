@@ -1,13 +1,8 @@
-"""
-Minecraft Hangman - CS50P Final Project
-A terminal Hangman game themed around Minecraft with difficulty levels,
-scoring, and persistent stats.
-"""
-
 import json
 import random
 import string
 from pathlib import Path
+import pyfiglet
 
 from colorama import Fore, Style, init
 
@@ -293,18 +288,18 @@ def show_stats(stats: dict) -> None:
     print("------------------\n")
 
 
+def show_title() -> None:
+    """Print the game title in big block letters."""
+    for word in ("Minecraft", "Hangman"):
+        art = pyfiglet.figlet_format(word, font="ansi_shadow")
+        print(Fore.GREEN + Style.BRIGHT + art)
+
+
 def main() -> None:
     """Main entry point: menu loop."""
     stats = load_stats()
 
-    print(Fore.GREEN + Style.BRIGHT + r"""
- __  __ _                           __ _     _   _                                  
-|  \/  (_)_ __   ___  ___ _ __ __ _/ _| |_  | | | | __ _ _ __   __ _ _ __ ___   __ _ 
-| |\/| | | '_ \ / _ \/ __| '__/ _` | |_| __| | |_| |/ _` | '_ \ / _` | '_ ` _ \ / _` |
-| |  | | | | | |  __/ (__| | | (_| |  _| |_  |  _  | (_| | | | | (_| | | | | | | (_| |
-|_|  |_|_|_| |_|\___|\___|_|  \__,_|_|  \__| |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|
-                                                                |___/                
-    """)
+    show_title()
     print(Fore.WHITE + "Welcome to Minecraft Hangman!")
     print(Fore.YELLOW + "Guess Minecraft items, blocks, mobs and more.\n")
 
