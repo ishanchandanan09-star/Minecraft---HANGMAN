@@ -1,0 +1,71 @@
+# Easy (up to 6 letters)
+axe
+bed
+bow
+ice
+map
+book
+cake
+coal
+door
+gold
+iron
+lava
+sand
+snow
+wood
+wool
+anvil
+apple
+arrow
+blaze
+bread
+brick
+chest
+clock
+fence
+glass
+horse
+stone
+sword
+torch
+water
+wheat
+bucket
+gravel
+hopper
+ladder
+piston
+shears
+shield
+spider
+zombie
+
+# Medium (7-9 letters)
+compass
+creeper
+diamond
+emerald
+furnace
+leather
+pickaxe
+cauldron
+enderman
+firework
+obsidian
+redstone
+skeleton
+villager
+glowstone
+
+# Hard (10+ letters / phrases)
+armor stand
+ender pearl
+fishing rod
+grass block
+cobblestone
+ender dragon
+brewing stand
+nether portal
+crafting table
+enchanted book
