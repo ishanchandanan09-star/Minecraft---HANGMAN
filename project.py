@@ -6,16 +6,12 @@ import pyfiglet
 
 from colorama import Fore, Style, init
 
-# Initialize colorama for cross-platform colored output
 init(autoreset=True)
 
-# File paths
 WORDS_FILE = Path(__file__).parent / "words.txt"
 STATS_FILE = Path(__file__).parent / "stats.json"
 
-# ASCII art stages for the hangman (0 wrong -> full figure)
 HANGMAN_STAGES = [
-    # 0 wrong guesses
     r"""
      +---+
      |   |
@@ -25,7 +21,6 @@ HANGMAN_STAGES = [
          |
     =========
     """,
-    # 1
     r"""
      +---+
      |   |
@@ -35,7 +30,6 @@ HANGMAN_STAGES = [
          |
     =========
     """,
-    # 2
     r"""
      +---+
      |   |
@@ -45,7 +39,6 @@ HANGMAN_STAGES = [
          |
     =========
     """,
-    # 3
     r"""
      +---+
      |   |
@@ -55,7 +48,6 @@ HANGMAN_STAGES = [
          |
     =========
     """,
-    # 4
     r"""
      +---+
      |   |
@@ -65,7 +57,6 @@ HANGMAN_STAGES = [
          |
     =========
     """,
-    # 5
     r"""
      +---+
      |   |
@@ -75,7 +66,6 @@ HANGMAN_STAGES = [
          |
     =========
     """,
-    # 6 - game over
     r"""
      +---+
      |   |
@@ -148,7 +138,6 @@ def check_guess(secret: str, guessed_letters: set[str], letter: str) -> tuple[bo
         return False, guessed_letters
 
     new_guessed = guessed_letters | {letter}
-    # Only count as correct if the letter appears in the secret (ignoring spaces)
     is_correct = letter in secret.replace(" ", "")
     return is_correct, new_guessed
 
@@ -264,13 +253,11 @@ def play_game(difficulty: str = "medium", max_wrong: int = 6) -> bool:
             wrong_guesses += 1
             print(Fore.RED + f"Sorry, '{user_input}' is not in the word.")
 
-        # Win check (ignore spaces)
         if all(c in guessed_letters or c == " " for c in secret):
             print(Fore.YELLOW + HANGMAN_STAGES[wrong_guesses])
             print(Fore.GREEN + Style.BRIGHT + f"\nYou won! The word was: {secret.upper()}")
             return True
 
-    # Lost
     print(Fore.YELLOW + HANGMAN_STAGES[wrong_guesses])
     print(Fore.RED + Style.BRIGHT + f"\nGame over! The word was: {secret.upper()}")
     return False
